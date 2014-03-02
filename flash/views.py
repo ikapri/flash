@@ -22,7 +22,6 @@ def home():
         ids = range(1, len(WORDS)+1)
         for i in session['ids']:
             ids.remove(i)
-        print ids
         if len(ids) <= 10:
             rand_ids = ids
         else:
