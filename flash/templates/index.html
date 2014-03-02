@@ -1,0 +1,40 @@
+<html>
+<head>
+
+<script type="text/javascript" src="{{url_for('static', filename='jquery-1.9.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='knockout-2.2.1.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"></link>
+<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+</head>
+
+<body style="background-color:#171717;">
+<div id="data" style="display:none">{{data}}</div>
+<div class="instr" >
+<h3>Use Left/Right Keys for navigation</h3>
+<h3>Space bar to flip the card</h3>
+</div>
+<div class="container">
+<!-- ko foreach:words -->
+<!-- ko if:$data==$root.currentWord() -->
+<div class="flip-container">
+	<div class="flipper" style="text-align:center;font-size:30px;" data-bind="click:$root.flip">
+		
+		<div class="front">
+			<span data-bind="text:word" style="position:relative;top:30%;"></span>	
+		</div>
+		<div class="back" >
+			<span  style="position:relative;top:25%;" data-bind="text:def"></span>	
+		</div>
+	</div>
+	
+</div> 
+<!-- /ko -->
+<!-- /ko -->
+
+</div>
+
+
+
+</body>
+</html>
